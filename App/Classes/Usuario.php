@@ -1,7 +1,7 @@
 <?php
 
 class Usuario{
-    public int $id_usuario;
+    // public int $id_usuario;
     public string $nome;
     public string $email;
     public string $senha;

@@ -3,7 +3,7 @@
 
 class Database{
     private $conn;
-    private string $local = '127.0.0.1';
+    private string $local = 'localhost';
     private string $db = 'parzivals';
     private string $user = 'root';
     private string $password = '';
@@ -20,7 +20,7 @@ class Database{
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Conectado com sucesso";
         }catch(PDOException $err){
-            die("Connection Failed". $err->getMessage());
+            die("Connection Failed: " . $err->getMessage());
         }
     }
 

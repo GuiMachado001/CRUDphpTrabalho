@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
+
   require '../../App/Classes/Usuario.php';
 
   // $objUser = new Usuario();
@@ -63,13 +68,8 @@ include '../includes/index/background.php';
                 <input type="password" class="inputSenha" name="senha">
             </div>
             
-            <div class="containerConfSenha">
-                <label for="confSenha">Confirmar Senha</label>
-                <input type="password" class="inputSenha" name="confSenha">
-            </div>
-            
             <div class="containerButton">
-                <button type="reset" class="btnCancel">Cancelar</button>
+                <!-- <button type="reset" class="btnCancel">Cancelar</button> -->
                 <button type="submit" class="btnLogin">Cadastrar</button>
             </div>
             <a href="public/pages/cadastrar.php" class="logar">Logar</a>
