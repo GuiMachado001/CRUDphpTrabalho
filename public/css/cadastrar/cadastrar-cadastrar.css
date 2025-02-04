@@ -21,7 +21,7 @@
 .containerConfSenha{
     border-radius: 0px 0px 10px 10px;
 }
-form{
+.formCadastroUsuario{
     display: flex;
     align-items: center;
     justify-content: center;

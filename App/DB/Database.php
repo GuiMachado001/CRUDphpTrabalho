@@ -1,9 +1,8 @@
 <?php
 
-
 Class Database{
     private $conn;
-    private string $local = 'localhost';
+    private string $local = '10.28.2.105';
     private string $db = 'parzivals';
     private string $user = 'devweb';
     private string $password = 'suporte@22';
@@ -36,7 +35,7 @@ Class Database{
             die('Connection Failed'. $err->getMessage());
         }
     }
-
+    
     public function insert($values){
         // quebrar o array associativo que veio como parametro
         $fields = array_keys($values);
@@ -54,55 +53,29 @@ Class Database{
         }
     }
 
-
-    public function select($where = null, $order = null, $limit = null, $fields = '*'){
-        $where = strlen($where) ? 'WHERE '.$where : '';
-        $order = strlen($order) ? 'ORDER BY '.$order : '';
-        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
-
-        $query = 'SELECT '.$fields.' FROM '.$this->table. ' '.$where. ' '.$order . ' '.$limit ;
-
-        return $this->execute($query);
-    }
-
-    public function select_by_id($where = null, $order = null, $limit = null, $fields = '*'){
-        $where = strlen($where) ? 'WHERE '.$where : '';
-        $order = strlen($order) ? 'ORDER BY '.$order : '';
-        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
-
-        $query = 'SELECT '.$fields.' FROM '.$this->table. ' '.$where. ' '.$order . ' '.$limit ;
-
-        return $this->execute($query)->fetch(PDO::FETCH_ASSOC);
-    }
-
-
-    public function delete($where){
-        //Montar a query
-
-        $query = 'DELETE FROM '.$this->table. ' WHERE '.$where;
-        $del = $this->execute($query);
-        $del = $del->rowCount();
-
-        if($del == 1){
-            return true;
-        }else{
-            return false;
+    public function login($email, $senha){
+    
+        // Preparar a consulta SQL
+        $verificar = $this->conn->prepare("SELECT id_usuario, senha FROM usuario WHERE email = :e");
+        $verificar->bindValue(":e", $email);
+        $verificar->execute();
+        
+        // Verificar se o email existe
+        if ($verificar->rowCount() > 0) {
+            $dados = $verificar->fetch();
+    
+            // Verificar se a senha fornecida corresponde à senha armazenada (com hash)
+            if (password_verify($senha, $dados['senha'])) {
+                // Iniciar sessão
+                session_start();
+                $_SESSION['id_usuario'] = $dados['id_usuario'];
+                return true;
+            }
         }
+    
+        // Caso não encontre o usuário ou a senha não seja válida
+        return false;
     }
+    
 
-    public function update($where, $array){
-
-        echo $where;
-        echo "<br>";
-        print_r($array);
-
-        //Extraindo as chaves, coluna
-        $fields = array_keys($array);
-        $values = array_values($array);
-        //Montar Query
-        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields). '=? WHERE '. $where;
-
-        $res = $this->execute($query, $values);
-        return $res->rowCount();
-    }
 }
