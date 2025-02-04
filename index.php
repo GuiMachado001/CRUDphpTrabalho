@@ -1,6 +1,57 @@
-<?php
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parzival's</title>
+
+    <link rel="stylesheet" href="public/css/login/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-shop"> Parzival's Supermarket</i>
+        
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="navItem active"><a href="">Produtos</a></li>
+                <li class="navItem active"><a href=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="containerBackground">
+        <div class="containerImgLogin">
+            <img src="public/img/tl.webp" alt="">
+        </div>
+    </div>
+
+    
+    <div class="containerDelimiterLogin">
+        <div class="containerLogin">
+
+            <div class="containerEmail">
+                <label for="email">Email</label>
+                <input type="email" class="inputEmail" name="email">
+            </div>
+
+            <div class="containerSenha">
+                <label for="senha">Senha</label>
+                <input type="password" class="inputSenha" name="senha">
+            </div>
+
+            <div class="containerButton">
+                <button type="reset" class="btnCancel">Cancelar</button>
+                <button type="submit" class="btnLogin">Login</button>
+            </div>
+            <a href="public/pages/cadastrar.php" class="cadastrar">Cadastrar-se</a>
+
+        </div>
+    </div>
 
 
-include 'public/includes/index/header.php';
-include 'public/includes/index/background.php';
-include 'public/includes/index/login.php';
+</body>
+</html>
+

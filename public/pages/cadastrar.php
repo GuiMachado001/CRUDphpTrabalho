@@ -1,9 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-
-
   require '../../App/Classes/Usuario.php';
 
   // $objUser = new Usuario();
@@ -11,42 +6,66 @@ error_reporting(E_ALL);
   if(isset($_POST['cadastrar'])){
 
     $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
     $senha = $_POST['senha'];
     $email = $_POST['email'];
+    $perfil = $_POST['perfil'];
 
 
     $objUser = new Usuario();
 
     $objUser->nome = $nome;
+    $objUser->cpf = $cpf;
     $objUser->senha = password_hash($senha, PASSWORD_DEFAULT);
     $objUser->email = $email;
+    $objUser->id_perfil = $perfil;
 
     $res = $objUser->cadastrar();
 
     if($res){
       echo "<script>alert('Cadastrado com Sucesso') </script>";
     }else{
-        echo "<script>alert('Erro ao cadastrar, por favor tente novamente.');</script>";
-
+      echo "<script>alert('Erro ao Cadastrar') </script>";
     }
   }
 
-include '../includes/index/header.php';
-include '../includes/index/background.php';
 // include '../includes/cadastrar/cadastro.php';
 
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parzival's</title>
 
-    <link rel="stylesheet" href="../css/login/style.css">
     <link rel="stylesheet" href="../css/cadastrar/style.css">
+    <link rel="stylesheet" href="../css/login/background.css">
+    <link rel="stylesheet" href="../css/login/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-shop"> Parzival's Supermarket</i>
+        
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="navItem active"><a href="">Produtos</a></li>
+                <li class="navItem active"><a href=""></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+<div class="containerBackground">
+        <div class="containerImgLogin">
+            <img src="public/img/tl.webp" alt="">
+        </div>
+    </div>
 
     <div class="containerDelimiterLogin">
 

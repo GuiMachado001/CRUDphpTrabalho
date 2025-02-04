@@ -3,10 +3,10 @@
 
 class Database{
     private $conn;
-    private string $local = 'localhost';
+    private string $local = '10.28.2.105';
     private string $db = 'parzivals';
-    private string $user = 'root';
-    private string $password = '';
+    private string $user = 'devweb';
+    private string $password = 'suporte@22';
     private $table;
 
     function __construct($table = null){
@@ -20,7 +20,7 @@ class Database{
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Conectado com sucesso";
         }catch(PDOException $err){
-            die("Connection Failed: " . $err->getMessage());
+            die("Connection Failed". $err->getMessage());
         }
     }
 
@@ -35,6 +35,7 @@ class Database{
             die('Connection Failed'. $err->getMessage());
         }
     }
+
     public function insert($values){
         // quebrar o array associativo que veio como parametro
         $fields = array_keys($values);
