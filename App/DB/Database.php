@@ -1,9 +1,9 @@
 <?php
 
 
-class Database{
+Class Database{
     private $conn;
-    private string $local = '10.28.2.105';
+    private string $local = 'localhost';
     private string $db = 'parzivals';
     private string $user = 'devweb';
     private string $password = 'suporte@22';
@@ -12,8 +12,9 @@ class Database{
     function __construct($table = null){
         $this->table = $table;
         $this->conecta();
+
     }
-    
+
     private function conecta(){
         try{
             $this->conn = new PDO("mysql:host=".$this->local.";dbname=$this->db",$this->user,$this->password);
@@ -51,5 +52,57 @@ class Database{
         }else{
             return false;
         }
+    }
+
+
+    public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        $query = 'SELECT '.$fields.' FROM '.$this->table. ' '.$where. ' '.$order . ' '.$limit ;
+
+        return $this->execute($query);
+    }
+
+    public function select_by_id($where = null, $order = null, $limit = null, $fields = '*'){
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        $query = 'SELECT '.$fields.' FROM '.$this->table. ' '.$where. ' '.$order . ' '.$limit ;
+
+        return $this->execute($query)->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+    public function delete($where){
+        //Montar a query
+
+        $query = 'DELETE FROM '.$this->table. ' WHERE '.$where;
+        $del = $this->execute($query);
+        $del = $del->rowCount();
+
+        if($del == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function update($where, $array){
+
+        echo $where;
+        echo "<br>";
+        print_r($array);
+
+        //Extraindo as chaves, coluna
+        $fields = array_keys($array);
+        $values = array_values($array);
+        //Montar Query
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields). '=? WHERE '. $where;
+
+        $res = $this->execute($query, $values);
+        return $res->rowCount();
     }
 }

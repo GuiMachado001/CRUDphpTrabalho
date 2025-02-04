@@ -6,27 +6,23 @@
   if(isset($_POST['cadastrar'])){
 
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
     $senha = $_POST['senha'];
     $email = $_POST['email'];
-    $perfil = $_POST['perfil'];
 
 
     $objUser = new Usuario();
 
     $objUser->nome = $nome;
-    $objUser->cpf = $cpf;
     $objUser->senha = password_hash($senha, PASSWORD_DEFAULT);
     $objUser->email = $email;
-    $objUser->id_perfil = $perfil;
 
     $res = $objUser->cadastrar();
 
-    if($res){
-      echo "<script>alert('Cadastrado com Sucesso') </script>";
-    }else{
-      echo "<script>alert('Erro ao Cadastrar') </script>";
-    }
+    // if($res){
+    //   echo "<script>alert('Cadastrado com Sucesso') </script>";
+    // }else{
+    //   echo "<script>alert('Erro ao Cadastrar') </script>";
+    // }
   }
 
 // include '../includes/cadastrar/cadastro.php';
@@ -61,7 +57,7 @@
     </header>
 
     
-<div class="containerBackground">
+    <div class="containerBackground">
         <div class="containerImgLogin">
             <img src="public/img/tl.webp" alt="">
         </div>
@@ -69,7 +65,7 @@
 
     <div class="containerDelimiterLogin">
 
-    <div class="containerLogin">
+    <!-- <div class="containerLogin"> -->
         <form method="POST">
             
             <div class="containerNome">
@@ -88,13 +84,13 @@
             </div>
             
             <div class="containerButton">
-                <!-- <button type="reset" class="btnCancel">Cancelar</button> -->
+                <button type="reset" class="btnCancel">Cancelar</button>
                 <button type="submit" class="btnLogin">Cadastrar</button>
             </div>
             <a href="public/pages/cadastrar.php" class="logar">Logar</a>
             
         </form>
-    </div>
+    <!-- </div> -->
 </div>
 
 
