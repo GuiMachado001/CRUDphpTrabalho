@@ -29,7 +29,7 @@
 
                     <div class="cadastroProduto cadastroImgProduto">
                         <label for="nome">Preço</label>
-                        <input type="image" class="inptCadastroProduto inptImgProduto" name="imagem">
+                        <input type="text" class="inptCadastroProduto inptImgProduto" name="imagem">
                     </div>
 
                     <div class="containerBtnCadastroProduto">

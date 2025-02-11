@@ -18,7 +18,7 @@
         
         <nav class="nav-bar">
             <ul class="nav-list">
-                <li class="navItem active"><a href="">Produtos</a></li>
+                <li class="navItem active"><a href="./areaprivada.php">Produtos</a></li>
                 <li class="navItem active"><a href="./cadastrarProduto.php">Admin</a></li>
             </ul>
         </nav>

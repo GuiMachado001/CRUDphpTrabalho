@@ -22,4 +22,9 @@ class Usuario{
         return $res;
     }
 
+    public function listar() {
+        $sql = "SELECT * FROM produto";
+        return $this->db->select($sql);
+    }
+
 }
