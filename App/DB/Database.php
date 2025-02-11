@@ -18,7 +18,7 @@ Class Database{
         try{
             $this->conn = new PDO("mysql:host=".$this->local.";dbname=$this->db",$this->user,$this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conectado com sucesso";
+            // echo "Conectado com sucesso";
         }catch(PDOException $err){
             die("Connection Failed". $err->getMessage());
         }
@@ -76,6 +76,31 @@ Class Database{
         // Caso não encontre o usuário ou a senha não seja válida
         return false;
     }
-    
 
+    public function select($sql, $params = []) {
+        // Corrigido o uso de $this->conn em vez de $this->pdo
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function update($sql, $params = []) {
+        $stmt = $this->conn->prepare($sql); // Alterado de $this->table para $this->conn
+        return $stmt->execute($params);
+    }
+    
+    public function delete($sql, $params = []) {
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute($params);
+    }
+
+
+
+    public function logar($email, $senha){
+        $db = new Database('usuario');
+
+        $res = $db->login($email, $senha);
+        return $res;
+    }
+    
 }

@@ -1,0 +1,57 @@
+.containerEditarProduto{
+
+}
+
+.formEditarProduto{
+    width: 90%;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+
+
+
+
+    color: white;
+    background: rgba(154, 3, 255, 0.678);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+.containerEditarProduto{
+    width: 50%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    
+}
+.inputEditarProduto{
+    /* width: 80%; */
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(231, 231, 231);
+}
+.inputEditarProduto:focus{
+    border: 3px solid #9849ff;
+}
+.inputEditarProduto:hover{
+    border: 3px solid #9849ff;
+}
+.btnEditar{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(38, 23, 245);
+    color: white;
+    font-weight: 300;
+}

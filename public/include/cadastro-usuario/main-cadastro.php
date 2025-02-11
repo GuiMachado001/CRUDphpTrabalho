@@ -1,6 +1,6 @@
 <div class="containerDelimiterLogin">
 
-<div class="containerLogin">
+<div class="containerLoginUsuario">
     <form method="POST" class="formCadastroUsuario">
         
         <div class="containerEmail">

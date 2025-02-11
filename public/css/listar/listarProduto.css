@@ -1,0 +1,28 @@
+body{
+    background-color: #f4f4f9;
+}
+.containerTabelaProdutos{
+    width: 90%;
+    height: 40%;
+    margin-top: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    border: 1px solid red;
+    overflow-y: auto;
+}
+
+table{
+    /* width: 250px; */
+    padding: 5px;
+    border: 2px solid #0E0D0D;
+}
+td, th{
+    padding: 5px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #8b32f4;
+}

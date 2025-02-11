@@ -1,42 +1,34 @@
 <?php
-require 'App/Classes/Produto.php';
 $produto = new Produto();
 $produto = $produto->listar();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Pages/Css/estilo_index.css">
-    <title>Lista de Produtos</title>
-</head>
-<body>
+<div class="containerTabelaProdutos">
+
     <h1>Lista de produtos</h1>
-
-
-    <table border="1">
+    
+    
+    <table >
         <thead>
             <tr>
-                <th>ID</th>
-                <th>preco</th>
-                <th>descricao</th>
-                <th>imagem</th>
+                <th>ID produto</th>
+                <th>Nome do Produto</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($produto as $produto) { ?>
+        <?php foreach ($produto as $produtos) { ?>
                 <tr>
-                    <td><?php echo $produto['id_produto']; ?></td>
-                    <td><?php echo $produto['preco']; ?></td>
-                    <td><?php echo $produto['descrocao']; ?></td>
-                    <td><?php echo $produto['imagem']; ?></td>
-
+                    <td><?php echo $produtos['id_produto']; ?></td>
+                    <td><?php echo $produtos['nome']; ?></td>
+                    <td>
+                    <a href="editar-produto.php?id_produto=<?php echo $produtos['id_produto']; ?>">Editar</a>
+                    <a href="deletar-produto.php?id_produto=<?php echo $produtos['id_produto']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+                    </td>
                 </tr>
             <?php } ?>
-        </tbody>
-    </table>
-</body>
-</html>
+            </tbody>
+        </table>
+        
+    </div>

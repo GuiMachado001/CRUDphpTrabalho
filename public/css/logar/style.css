@@ -1,6 +1,6 @@
 @import url(header.css);
-@import url(login.css);
 @import url(background.css);
+
 
 *{
     margin: 0;
@@ -13,6 +13,7 @@ body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-color: #f4f4f9 !important;
     /* background-color: #18181b; */
 
 }

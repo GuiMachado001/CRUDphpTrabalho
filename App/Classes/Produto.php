@@ -1,12 +1,10 @@
 <?php
+require './App/DB/Database.php';
 
-
-class Usuario{
+class Produto{
     public int $id_usuario;
     public string $nome;
-    public string $preco;
-    public string $descricao;
-    public string $imagem;
+
 
     public function cadastrar(){
         $db = new Database('produto');
@@ -14,17 +12,40 @@ class Usuario{
         $res = $db->insert(
                 [
                     'nome'=> $this->nome,
-                    'preco'=> $this->preco,
-                    'descricao'=> $this->descricao,
-                    'imagem'=> $this->imagem,
                 ]
             );
         return $res;
     }
 
     public function listar() {
+        $db = new Database('produto');
         $sql = "SELECT * FROM produto";
-        return $this->db->select($sql);
+        return $db->select($sql);
     }
 
+    public function buscar($id) {
+        $db = new Database('produto');
+    
+        $sql = "SELECT * FROM produto WHERE id_produto = ?";
+        $prod = $db->select($sql, [$id]);
+
+        return $prod ? $prod[0] : null;
+    }
+    
+    public function atualizar($id, $nome) {
+        $db = new Database('produto');
+    
+        $sql = "UPDATE produto SET nome = ? WHERE id_produto = ?";
+    
+        return $db->update($sql, [$nome, $id]);
+    }
+
+    public function deletar($id) {
+        $db = new Database('produto');
+        $sql = "DELETE FROM produto WHERE id_produto = ?";
+        return $db->delete($sql, [$id]);
+    }
+    
+    
 }
+
