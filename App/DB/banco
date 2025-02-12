@@ -1,0 +1,28 @@
+CREATE DATABASE parzivals;
+USE parzivals;
+
+create table usuario(
+id_usuario int not null AUTO_INCREMENT,
+nome varchar(200),
+email varchar(100),
+senha varchar(100),
+primary key(id_usuario)
+);
+
+CREATE TABLE produto(
+id_produto INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(200),
+PRIMARY KEY(id_produto)
+);
+
+CREATE TABLE anotacoes(
+ id_anotacoes INT NOT NULL AUTO_INCREMENT,
+ title VARCHAR(200),
+ descricao VARCHAR(200),
+ PRIMARY KEY(id_anotacoes)
+);
+
+
+SELECT * FROM usuario;
+SELECT * FROM produto;
+SELECT * FROM anotacoes;
