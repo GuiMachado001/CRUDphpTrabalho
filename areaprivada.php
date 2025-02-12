@@ -24,7 +24,6 @@ if(isset($_POST['cadastrarProduto'])){
 
 
 
-include './public/include/header.php';
+include './public/include/header2.php';
 include './public/include/cadastro-produto/main-cadastro-produto.php';
 include 'public/include/listar-produto/listar-produto.php';
-echo "certo";

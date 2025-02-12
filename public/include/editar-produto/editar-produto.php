@@ -35,4 +35,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button class="btnEditar" type="submit">Atualizar</button>
 </form>
 <br>
-<a href="areaprivada.php">Voltar para a lista de produtos</a>
+<a href="areaprivada.php" class="voltarLista">Voltar para a lista de produtos</a>

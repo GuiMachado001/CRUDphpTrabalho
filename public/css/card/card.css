@@ -1,0 +1,93 @@
+body{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+
+}
+.containerCards{
+    width: 100%;
+    height: 100vh;
+    /* margin-top: 65px; */
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+}
+.novaAnotacao{
+    font-size: 20px;
+    color: black;
+}
+.containerCadastrarAnotacoes{
+    width: 100%;
+    /* height: 10%; */
+    display: flex;
+    align-items: center;
+    /* justify-content:center; */
+    padding: 15px;
+}
+.tituloAnotacoes{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainCard{
+    width: 100%;
+    height: 90%;
+    padding: 15px;
+
+}
+.card {
+    display: flex; 
+    flex-direction: column; 
+    border-radius: 19px  19px 19px 19px;
+    width: 272px;
+    box-shadow: 2px 7px 13px 0px rgba(0,0,0,0.2);
+    overflow: hidden; 
+    border-color: #000000;
+}
+.card-body{
+    background-color: #fffcfc;
+    flex-grow: 1;
+    padding: 24px; 
+}
+.card-title{
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 0px; 
+    padding: 0px; 
+}
+.card-text{
+    line-height: 1.4;
+    margin: 10px 0px 0px 0px; 
+    font-size: 15px;
+    color: #000000;
+
+    width: 100%;
+    height: 150px;
+
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+
+
+.mainCard{
+    width: 100%;
+    height: 70vh;
+    border: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 20px;
+
+}

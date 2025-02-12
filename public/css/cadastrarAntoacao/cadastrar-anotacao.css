@@ -1,23 +1,18 @@
 body{
     width: 100%;
     height: 100vh;
-
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    flex-direction: column;
     background-color: #F2ECEB;
 }
 
-.containerCadastroProduto{
+.containerCadastrarAnotacao{
     width: 90%;
-    height: 100px;
+    /* height: 100px; */
     /* margin-top: 5%; */
     
 }
-.formCadastroProduto{
+.formCadastroAnotacao{
     width: 100%;
-    height: 150px;
+    height: 400px;
 
     color: white;
 
@@ -46,7 +41,7 @@ body{
 }
 
 
-.cadastroProduto{
+.cadastroAnotacao{
     width: 80%;
     height: 150px;
 
@@ -55,21 +50,23 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-.inptCadastroProduto{
+.inptCadastroAnotacao{
     /* width: 80%; */
     height: 30px;
     border-radius: 5px;
     background-color: rgb(231, 231, 231);
     border: none;
 }
-.inptCadastroProduto:focus{
+.inptCadastroAnotacao:focus{
     border: 2px solid black;
 }
-.inptCadastroProduto:hover{
+.inptCadastroAnotacao:hover{
     border: 2px solid black;
 }
-
-.containerBtnCadastroProduto{
+.inptDescricaoAnotacao{
+    height: 100px;
+}
+.containerBtnCadastroAnotacao{
     width: 100%;
     height: 60px;
 

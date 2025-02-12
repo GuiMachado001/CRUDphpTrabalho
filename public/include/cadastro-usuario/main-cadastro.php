@@ -3,17 +3,17 @@
 <div class="containerLoginUsuario">
     <form method="POST" class="formCadastroUsuario">
         
-        <div class="containerEmail">
+        <div class="containerNomeCadastro">
             <label for="nome">Nome</label>
             <input type="text" class="inputSenha" name="nome">
         </div>
         
-        <div class="containerEmail">
+        <div class="containerEmailCadastro">
             <label for="email">Email</label>
             <input type="email" class="inputEmail" name="email">
         </div>
         
-        <div class="containerSenha">
+        <div class="containerSenhaCadastro">
             <label for="senha">Senha</label>
             <input type="password" class="inputSenha" name="senha">
         </div>
