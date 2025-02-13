@@ -13,12 +13,12 @@
                         <input type="text" class="inptCadastroProduto inptNomeProduto" name="nome">
                     </div>
                 </div>
+                
+                
                 <div class="containerBtnCadastroProduto">
                     <button type="reset" class="btnCancel">Cancelar</button>
                     <button type="submit" class="btnLogin" name="cadastrarProduto">Cadastrar</button>
                 </div>
-
-
             </form>
 
         <!-- </div> -->

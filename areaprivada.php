@@ -25,5 +25,13 @@ if(isset($_POST['cadastrarProduto'])){
 
 
 include './public/include/header2.php';
-include './public/include/cadastro-produto/main-cadastro-produto.php';
-include 'public/include/listar-produto/listar-produto.php';
+
+?>
+
+
+<div class="containerListarCadastrar">
+  <?php
+  include './public/include/cadastro-produto/main-cadastro-produto.php';
+  include 'public/include/listar-produto/listar-produto.php';
+  ?>
+</div>

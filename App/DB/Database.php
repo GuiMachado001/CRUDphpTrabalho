@@ -94,8 +94,6 @@ Class Database{
         return $stmt->execute($params);
     }
 
-
-
     public function logar($email, $senha){
         $db = new Database('usuario');
 

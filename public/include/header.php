@@ -29,7 +29,7 @@
         
         <nav class="nav-bar">
             <ul class="nav-list">
-                <li class="navItem active"><a href="./index.php">Sair</a></li>
+                <li class="navItem active"><a href="./index.php"></a></li>
             </ul>
         </nav>
     </header>

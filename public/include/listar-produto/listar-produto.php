@@ -31,4 +31,4 @@ $produto = $produto->listar();
             </tbody>
         </table>
         
-    </div>
+</div>
