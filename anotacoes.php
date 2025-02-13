@@ -25,7 +25,7 @@ include './public/include/header2.php';
                     <h2 class="card-title"><?php echo $anotacao['title']; ?></h2> 
                     <p class="card-text"><?php echo $anotacao['descricao']; ?></p> 
                     
-                    <a class="editar-card" href="editar-produto.php?id_anotacoes=<?php echo $anotacao['id_anotacoes']; ?>">Editar</a>
+                    <a class="editar-card" href="editar-anotacao.php?id_anotacoes=<?php echo $anotacao['id_anotacoes']; ?>">Editar</a>
                     <a class="excluir-card" href="deletar-anotacoes.php?id_anotacoes=<?php echo $anotacao['id_anotacoes']; ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                     
                 </div>

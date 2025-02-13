@@ -33,13 +33,15 @@ class Anotacoes{
         return $prod ? $prod[0] : null;
     }
 
-    public function atualizar($id, $title){
+    public function atualizar($id, $title, $descricao) {
         $db = new Database('anotacoes');
-
-        $sql = "UPDATE anotacoes SET title = ? WHERE id_anotacoes = ?";
-
-        return $db->update($sql, [$title, $id]);
+    
+        // Corrigindo a vírgula entre $descricao e $id
+        $sql = "UPDATE anotacoes SET title = ?, descricao = ? WHERE id_anotacoes = ?";
+    
+        return $db->update($sql, [$title, $descricao, $id]);  // Adicionando $id no array
     }
+    
 
     public function deletar($id) {
         $db = new Database('anotacoes');

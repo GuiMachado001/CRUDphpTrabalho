@@ -1,10 +1,10 @@
-.containerEditarProduto{
+.containerEditarAnotacoes{
 
 }
 
-.formEditarProduto{
+.formEditarAnotacoes{
     width: 50%;
-    height: 150px;
+    height: 250px;
 
     color: white;
 
@@ -20,7 +20,7 @@
     -webkit-backdrop-filter: blur(6.6px);
 
 }
-.containerEditarProduto{
+.containerEditarAnotacoes{
     width: 50%;
     height: 100px;
 
@@ -30,7 +30,7 @@
     /* border: 1px solid blue; */
     
 }
-.inputEditarProduto{
+.inputEditarAnotacoes{
     /* width: 80%; */
     height: 30px;
     border-radius: 5px;
@@ -38,10 +38,10 @@
     padding: 10px;
     background-color: rgb(231, 231, 231);
 }
-.inputEditarProduto:focus{
+.inputEditarAnotacoes:focus{
     border: 2px solid black;
 }
-.inputEditarProduto:hover{
+.inputEditarAnotacoes:hover{
     border: 3px solid black;
 }
 .btnEditar{
